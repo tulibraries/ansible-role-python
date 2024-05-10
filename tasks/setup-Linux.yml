@@ -3,7 +3,7 @@
 
 # This task avoids downloading Python archive every time
 - name: Linux | Check if Python is present with the right version
-  command: "{{ python_path }}/bin/python{{ python_version[:3] }} --version"
+  command: "{{ python_path }}/bin/python{{ python_version[:4] }} --version"
   register: command_result
   ignore_errors: yes
   changed_when: false
