@@ -8,7 +8,7 @@ package_requirements:
   - libuuid-devel
   - ncurses-devel
   - libffi-devel
-  - openssl-devel
+  - openssl11-devel
   - readline-devel
   - sqlite-devel
   - tk-devel
