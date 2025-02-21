@@ -8,14 +8,16 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: linux
-    image: diodonfrost/${distribution:-ansible-centos:8}
+  - name: rockylinux
+    image: geerlingguy/docker-rockylinux9-ansible:latest
+    capabilities:
+      - SYS_ADMIN
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
     privileged: yes
     pre_build_image: yes
     env:
-      python_version: "${python_version:-3.8.5}"
+      python_version: "${python_version:-3.12.4}"
 provisioner:
   name: ansible
 verifier:
