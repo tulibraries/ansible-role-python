@@ -15,4 +15,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Molecule
-          command: pipenv run molecule test
+          command: |
+            while sleep 60; do echo "Still running..."; done &
+            pipenv run molecule test
+            kill %1
